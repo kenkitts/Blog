@@ -1,0 +1,100 @@
+baseURL: "https://kenkitts.com/"
+title: "Ken Kitts"
+paginate: 10
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+permalinks:
+  posts: "/posts/:slug/"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # Required for search
+
+params:
+  env: production
+  title: "Ken Kitts"
+  description: "Technical blog on AWS, cloud architecture, and serverless"
+  keywords: [AWS, Cloud, Serverless, Architecture, DevOps]
+  author: "Ken Kitts"
+
+  defaultTheme: auto
+  disableThemeToggle: false
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  hidemeta: false
+  hideSummary: false
+
+  assets:
+    favicon: "/favicon.ico"
+    favicon16x16: "/favicon-16x16.png"
+    favicon32x32: "/favicon-32x32.png"
+    apple_touch_icon: "/apple-touch-icon.png"
+
+  label:
+    text: "Ken Kitts"
+
+  homeInfoParams:
+    Title: "Hey 👋"
+    Content: >
+      I'm Ken — I write about AWS, cloud architecture, and lessons learned
+      building resilient systems at scale.
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/kenkitts"
+    - name: linkedin
+      url: "https://linkedin.com/in/ken-kitts-4196852"
+    - name: rss
+      url: "/index.xml"
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 30
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 40
+
+markup:
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    noClasses: false
+    style: monokai

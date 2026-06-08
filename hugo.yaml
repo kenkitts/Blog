@@ -49,10 +49,15 @@ params:
     text: "Ken Kitts"
 
   homeInfoParams:
-    Title: "Hey 👋"
+    Title: "Welcome to the void 🪦"
     Content: >
-      I'm Ken — I write about AWS, cloud architecture, and lessons learned
-      building resilient systems at scale.
+      ![](/wallpaper.webp)
+
+
+      I'm Ken. I keep payment systems operational in the cloud
+      so you can keep arguing with strangers on the internet. I write about
+      cloud architecture, operational nightmares, and the quiet dread of a
+      2 AM page. Everything here is my own opinion — my employer has better ones.
 
   socialIcons:
     - name: github

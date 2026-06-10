@@ -10,6 +10,9 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Obsidian editor state
+**/.obsidian/
+
 # CDK
 cdk/cdk.out/
 cdk/__pycache__/

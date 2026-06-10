@@ -1,7 +1,7 @@
 ---
 title: "Building an AI Agent from Scratch, Part 2: Tools, or How I Learned to Stop Worrying and Hand the Model a Knife"
 date: 2026-06-10
-draft: true
+draft: false
 tags: ["ai", "agents", "bedrock", "python", "llm"]
 series: ["Building an AI Agent from Scratch"]
 description: "Tools are what turn a chatbot into an agent — and what turn a polite assistant into something with filesystem access. Let's build the decorator-based registry, wire it into Bedrock, and add the guardrails that stop the model from reading your SSH keys."

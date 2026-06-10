@@ -2,6 +2,9 @@
 title: "Building an AI Agent from Scratch, Part 1: What Even Is an Agent Harness?"
 date: 2026-06-08
 draft: false
+slug: "agent-harness-part-1"
+aliases:
+    - "/posts/building-an-ai-agent-from-scratch-part-1-what-even-is-an-agent-harness/"
 tags: ["ai", "agents", "bedrock", "python", "llm"]
 series: ["Building an AI Agent from Scratch"]
 description: "LLMs can only produce text. So how do they 'use tools'? Let's break down the agent harness — the code that turns a language model into something that can actually do stuff."

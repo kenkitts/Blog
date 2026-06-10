@@ -5,6 +5,11 @@ draft: false
 tags: ["ai", "agents", "bedrock", "python", "llm"]
 series: ["Building an AI Agent from Scratch"]
 description: "LLMs can only produce text. So how do they 'use tools'? Let's break down the agent harness — the code that turns a language model into something that can actually do stuff."
+cover:
+    image: "brain_harness.webp"
+    alt: "An agent harness wrapping a language model"
+    relative: true
+    hidden: false
 ---
 
 You've seen the demos. AI agents booking flights, writing code, querying databases, probably filing your taxes while whispering sycophantic flattery. Very impressive. Very "the future is here, and it's kinda scary."

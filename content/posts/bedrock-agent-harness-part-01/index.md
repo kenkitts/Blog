@@ -7,7 +7,7 @@ series: ["Building an AI Agent from Scratch"]
 description: "LLMs can only produce text. So how do they 'use tools'? Let's break down the agent harness — the code that turns a language model into something that can actually do stuff."
 ---
 
-You've seen the demos. AI agents booking flights, writing code, querying databases, probably filing your taxes while whispering sycophantic flattery. Very impressive. Very "the future is here."
+You've seen the demos. AI agents booking flights, writing code, querying databases, probably filing your taxes while whispering sycophantic flattery. Very impressive. Very "the future is here, and it's kinda scary."
 
 Here's the simple secret nobody mentions in the keynote:
 
@@ -60,7 +60,7 @@ block-beta
     block:harness:3
         columns 3
         A["REPL\n(interface)"]:1
-        B["Agent Loop\n(the brain)"]:1
+        B["Agent Loop\n(the code)"]:1
         block:tools:1
             columns 2
             C["time"]
@@ -70,7 +70,7 @@ block-beta
         end
     end
     space:2
-    G["Model\n(Bedrock)"]:1
+    G["Model\n(the brains)"]:1
     space:1
 
     A --> B
@@ -95,7 +95,7 @@ Think of it as the hostage negotiator between you and an entity that genuinely b
 
 ### 2. The Agent Loop
 
-The heart of the harness. This is the `while` loop that earns its keep:
+The heart of the harness. This is the `while` loop:
 
 1. Send the conversation to the model
 2. Check what came back
@@ -113,7 +113,7 @@ flowchart TD
 
 The key insight: **the model doesn't run tools**. It *requests* them. It's like a toddler pointing at things in the grocery store. Your harness is the exhausted parent actually putting items in the cart.
 
-This also means you need a **circuit breaker** — a maximum number of iterations. Because if you don't cap the loop, a confused model will happily call tools until heat death (or until you freak out upon seeing the bill and pull the plug). My harness caps at 25 rounds. Sleep well.
+This also means you need a **circuit breaker** — a maximum number of iterations. Because if you don't cap the loop, a confused model will happily call tools until heat death (or until you freak out upon seeing the bill and pull the plug). My harness caps at 25 rounds.
 
 ### 3. The Tool Registry
 
@@ -182,7 +182,7 @@ Notice what happened:
 - The harness just did what it was told — run the tool, feed the result back. No opinions. No strategy.
 - The harness didn't even know what the user was asking for. The model figured that out.
 
-**The model reasons. The harness acts.** One is the scheming supervillain. The other is the henchman who actually builds the death ray. You're building the henchman that builds the death ray, so your hands are clean.
+**The model reasons. The harness acts.** One is the scheming supervillain. The other is the henchman who actually builds the death ray. Just imagine a utopian future of fully-autonomous AI-powered robots. 🏃🔫 🤖
 
 ## Why Build One from Scratch?
 
@@ -199,7 +199,7 @@ Once you see the loop, you can't unsee it. Every agent framework is just a decor
 
 ## What's Next
 
-In the next post, we'll look at actual code — how the tool registry works with a decorator pattern that keeps schema and implementation in sync. We'll also dig into why `eval()` is a war crime and how to build a safe calculator that won't let the model `rm -rf` your life.
+In the next post, we'll look at actual code — how the tool registry works with a decorator pattern that keeps schema and implementation in sync. We'll also discover how to build a safe filesystem toolset that won't let the model `rm -rf` your life.
 
 ---
 

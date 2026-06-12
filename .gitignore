@@ -18,3 +18,7 @@ cdk/cdk.out/
 cdk/__pycache__/
 cdk/.venv/
 cdk/node_modules/
+
+# Blog writing agent (infra + backlog — not published)
+.agent/
+.amazonq/

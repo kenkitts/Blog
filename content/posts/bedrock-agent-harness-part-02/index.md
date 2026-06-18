@@ -320,7 +320,7 @@ Here it is, said plainly:
 
 > **The model decides which tools run, and with what arguments. You decide what's actually possible.**
 
-That sentence is the entire security model of every AI agent on earth. Every framework, every "autonomous" startup, every breathless LinkedIn post — underneath it all, *something* either sandboxed the tools or didn't. There is no third option. There is no clever prompt that fixes an unsandboxed `os.system`. "Please don't read sensitive files" is not an access control policy. It's a prayer, and the model is an amoral atheist.
+That sentence is the entire security model of every AI agent on earth. Every framework, every "autonomous" startup, every breathless LinkedIn post — underneath it all, *something* either sandboxed the tools or didn't. There is no third option. There is no clever prompt that fixes an unsandboxed `os.system`. "Please don't read sensitive files" is not an access control policy. It's a prayer, and the model is an atheist.
 
 Your guardrails do not live in the prompt — they live in the **code that runs the tool**: the AST walk in `calculator`, the `realpath` check in `_resolve_in_sandbox`, the confirm-once gate in `write_file`. Validate inputs. Constrain scope. Resolve paths before you trust them. Assume every tool call is the model handing you a knife and asking you to hold it by the blade.
 

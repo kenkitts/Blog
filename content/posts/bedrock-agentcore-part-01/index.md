@@ -144,10 +144,17 @@ SYSTEM_PROMPT = (
 
 def build_agent() -> Agent:
     model = BedrockModel(model_id=MODEL_ID, region_name=REGION)
-    return Agent(model=model, system_prompt=SYSTEM_PROMPT, tools=NOTE_TOOLS)
+    return Agent(
+        model=model,
+        system_prompt=SYSTEM_PROMPT,
+        tools=NOTE_TOOLS,
+        callback_handler=None,   # we print results ourselves — see below
+    )
 ```
 
 That's the whole agent. No loop in sight — that's the point. The `while True` we sweated over last series is in there, it's just wearing Strands' clothes now.
+
+One argument earns a comment: `callback_handler=None`. By default Strands streams the model's text to stdout as it generates it — handy in some setups, but our REPL already prints the final answer itself. Leave the default on and every response shows up twice, like an echo you can't unhear. Off it goes.
 
 ## Running It
 

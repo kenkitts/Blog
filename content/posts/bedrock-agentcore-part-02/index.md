@@ -1,7 +1,7 @@
 ---
 title: "Building an Agent on Bedrock AgentCore, Part 2: Teaching It to Run Somewhere I Can Close My Laptop"
 date: 2026-06-25
-draft: true
+draft: false
 slug: "bedrock-agentcore-part-2"
 tags: ["ai", "agents", "bedrock", "agentcore", "python", "strands"]
 series: ["Building an Agent on Bedrock AgentCore"]

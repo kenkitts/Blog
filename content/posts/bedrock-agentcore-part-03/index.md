@@ -1,16 +1,23 @@
 ---
 title: "Building an Agent on Bedrock AgentCore, Part 3: Giving It a Memory That Outlives the Process"
 date: 2026-06-27
-draft: true
-slug: "bedrock-agentcore-part-3"
-tags: ["ai", "agents", "bedrock", "agentcore", "python", "strands"]
-series: ["Building an Agent on Bedrock AgentCore"]
-description: "The agent runs in the cloud now, and it still forgets everything the instant the box recycles. This post wires it to AgentCore Memory — durable conversation that survives a cold start, then long-term memory so it remembers you across sessions. Two honest scars included, free of charge."
+draft: false
+slug: bedrock-agentcore-part-3
+tags:
+  - ai
+  - agents
+  - bedrock
+  - agentcore
+  - python
+  - strands
+series:
+  - Building an Agent on Bedrock AgentCore
+description: The agent runs in the cloud now, and it still forgets everything the instant the box recycles. This post wires it to AgentCore Memory — durable conversation that survives a cold start, then long-term memory so it remembers you across sessions. Two honest scars included, free of charge.
 cover:
-    image: "agentcore_memory.webp"
-    alt: "A notes agent with a filing cabinet bolted on where its short-term memory used to evaporate"
-    relative: true
-    hidden: false
+  image: agentcore_memory.webp
+  alt: A notes agent with a filing cabinet bolted on where its short-term memory used to evaporate
+  relative: true
+  hidden: false
 ---
 
 [Last time](/posts/bedrock-agentcore-part-2/) we put the agent in the cloud behind a real endpoint. It works, it scales, two users don't trample each other — and it has the retention span of a mayfly. Notes live in a Python list that evaporates the instant the instance recycles. It remembers your note right up until it doesn't, which is arguably worse than a goldfish: at least the goldfish never promised.

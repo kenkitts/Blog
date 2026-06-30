@@ -220,7 +220,7 @@ One rule underneath all of it, the mirror of Part 1's: **the model reasons, but 
 
 ## What's Next
 
-In Part 4 we go off-box: **remote tools over MCP.** That `/connect` command lurking in the REPL wires a whole separate tool server into the same registry the local tools use — the model can't tell the difference, which is the entire point, and also exactly the kind of thing that should make a security-minded person nervous. We'll see why one registry to rule them all is elegant, and what it means to trust a knife you didn't forge yourself.
+In [Part 4](/posts/agent-harness-part-4/) we go off-box: **remote tools over MCP.** That `/connect` command lurking in the REPL wires a whole separate tool server into the same registry the local tools use — the model can't tell the difference, which is the entire point, and also exactly the kind of thing that should make a security-minded person nervous. We'll see why one registry to rule them all is elegant, and what it means to trust a knife you didn't forge yourself.
 
 ---
 

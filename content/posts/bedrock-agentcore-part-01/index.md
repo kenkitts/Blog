@@ -189,6 +189,6 @@ Nothing to clean up. This entire post runs on your laptop; the only thing you're
 
 ## Next: Teaching It to Run Somewhere I Can Close My Laptop
 
-Right now the agent is exactly as available as my laptop's battery. Next post we hand it to **AgentCore Runtime** — containerize it, deploy it, and call it as a real cloud endpoint with session isolation we didn't have to build. The agent won't get any smarter. It'll just stop depending on me leaving a terminal open.
+Right now the agent is exactly as available as my laptop's battery. [Next post](/posts/bedrock-agentcore-part-2/) we hand it to **AgentCore Runtime** — containerize it, deploy it, and call it as a real cloud endpoint with session isolation we didn't have to build. The agent won't get any smarter. It'll just stop depending on me leaving a terminal open.
 
 The notes still won't survive a restart, though. One cliffhanger at a time. Patience.

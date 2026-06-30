@@ -178,4 +178,4 @@ Run it when you're done poking. Future posts each get their own teardown, becaus
 
 The agent runs in the cloud now, behind a real endpoint, with sessions that don't trample each other. It's also still storing notes in a Python list that evaporates the instant the instance recycles — so it remembers your note right up until it doesn't.
 
-Next post we give it **AgentCore Memory**: short-term memory so a conversation survives more than one breath, then long-term memory so it remembers *you* across sessions. The notes will finally outlive the process.
+[Next post](/posts/bedrock-agentcore-part-3/) we give it **AgentCore Memory**: short-term memory so a conversation survives more than one breath, then long-term memory so it remembers *you* across sessions. The notes will finally outlive the process.

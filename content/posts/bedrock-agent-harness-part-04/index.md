@@ -21,7 +21,7 @@ That's the [Model Context Protocol](https://modelcontextprotocol.io/), or MCP. I
 
 **The model can't tell the difference. A tool is a tool — it has no idea this one lives 200ms and one OAuth handshake away on a box you've never seen.**
 
-All the code is in [the repo](https://github.com/kenkitts/bedrock-agent-harness): the MCP client, a self-contained example server, and the `/connect` command that staples them to the harness from Parts 1–3. Clone it, run it, and watch the model cheerfully call a tool it knows nothing about.
+All the code is in [the repo](https://github.com/kenkitts/bedrock-agent-harness): the MCP client, a self-contained example server, and the `/connect` command that staples them to the harness from Parts [1](/posts/agent-harness-part-1/)–[3](/posts/agent-harness-part-3/). Clone it, run it, and watch the model cheerfully call a tool it knows nothing about.
 
 ## What MCP Actually Is
 
@@ -181,7 +181,7 @@ The rule from Part 2 still holds. It just grew teeth:
 
 ## What's Next
 
-Four parts in, we've given the model hands: tools, planning, memory, and now reach across the network. Next we hand it something sneakier — *skills*, the difference between a tool that does a thing and a document that teaches the model how to do the thing. A tool returns data; a skill returns instructions. Same dispatch loop, wildly different trust model, and a brand-new way to prompt-inject yourself with a file you downloaded and *chose* to install. Bring a helmet.
+Four parts in, we've given the model hands: tools, planning, memory, and now reach across the network. [Next](/posts/agent-harness-part-5/) we hand it something sneakier — *skills*, the difference between a tool that does a thing and a document that teaches the model how to do the thing. A tool returns data; a skill returns instructions. Same dispatch loop, wildly different trust model, and a brand-new way to prompt-inject yourself with a file you downloaded and *chose* to install. Bring a helmet.
 
 ---
 

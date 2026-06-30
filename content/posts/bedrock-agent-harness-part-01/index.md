@@ -207,7 +207,7 @@ Once you see the loop, you can't unsee it. Every agent framework is just a decor
 
 ## What's Next
 
-In the next post, we'll look at actual code — how the tool registry works with a decorator pattern that keeps schema and implementation in sync. We'll also discover how to build a safe filesystem toolset that won't let the model `rm -rf` your life.
+In [the next post](/posts/agent-harness-part-2/), we'll look at actual code — how the tool registry works with a decorator pattern that keeps schema and implementation in sync. We'll also discover how to build a safe filesystem toolset that won't let the model `rm -rf` your life.
 
 ---
 

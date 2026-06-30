@@ -346,7 +346,7 @@ A decorator that kills schema drift. A dispatcher that raises instead of crashin
 
 ## What's Next
 
-In Part 3, we get into **session state and the plan** — that `Session` object, why the agent re-injects the checklist into every request, the soft termination guard that won't let the model fake "done," and the slow financial bleed of a chatbot with a perfect memory and no sense of thrift. Memory is a feature and a liability, and the bill arrives either way.
+In [Part 3](/posts/agent-harness-part-3/), we get into **session state and the plan** — that `Session` object, why the agent re-injects the checklist into every request, the soft termination guard that won't let the model fake "done," and the slow financial bleed of a chatbot with a perfect memory and no sense of thrift. Memory is a feature and a liability, and the bill arrives either way.
 
 ---
 

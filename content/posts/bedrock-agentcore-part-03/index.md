@@ -258,4 +258,4 @@ Tearing down the Runtime removes the execution role, which takes the inline memo
 
 The agent remembers your conversation and your preferences now. What it *still* doesn't have is anywhere real to put your actual notes — `add_note` is dumping them into the same in-memory Python list it always was, which evaporates with the instance exactly like before. We gave the agent a memory and left the filing cabinet made of smoke.
 
-Next post: **AgentCore Gateway**, where the notes finally get a real home — an actual notes/bookmarks API, exposed to the agent as governed MCP tools. The agent stops pretending to store things and starts calling something that does.
+Next post: [**AgentCore Gateway**](/posts/bedrock-agentcore-part-4/), where the notes finally get a real home — an actual notes/bookmarks API, exposed to the agent as governed MCP tools. The agent stops pretending to store things and starts calling something that does.

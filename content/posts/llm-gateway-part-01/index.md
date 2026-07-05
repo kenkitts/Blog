@@ -19,7 +19,7 @@ That is the status quo an LLM gateway is reacting to. Not a hypothetical future 
 
 ## What a Gateway Actually Is
 
-Think about your corporate web proxy. Every outbound HTTP request from inside your network routes through it. It checks who you are, whether you're allowed to go where you're going, logs the trip, and enforces policy — all without any individual user needing to manage that process themselves. It's invisible when things are working and the first thing your security team points at when they aren't.
+Think about your corporate web proxy. Every outbound HTTP request from inside your network routes through it. It checks who you are, whether you're allowed to go where you're going, logs the trip, and enforces policy — all without any individual user needing to manage that process themselves. It's invisible when things are working and the first thing people point at when they aren't.
 
 An LLM gateway is the same concept, applied to inference traffic.
 
@@ -32,8 +32,9 @@ flowchart LR
     D1["Dev (Claude Code)"] --> GW
     D2["Dev (Claude Code)"] --> GW
     D3["Dev (Claude Code)"] --> GW
-    IdP["Identity Provider"] <--> GW
-    GW["Gateway\nAuth · Policy · Metering"] --> B["Amazon Bedrock"]
+    GW["Gateway — Auth, Policy, Metering"] --> B["Amazon Bedrock"]
+    GW <--> IdP["Identity Provider"]
+    style IdP fill:#c0392b,color:#fff,stroke:#922b21
 ```
 
 The developers see an SSO login. The model provider sees one credential — yours. Everything in between is yours to observe and control.

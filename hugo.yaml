@@ -103,3 +103,6 @@ markup:
     lineNos: false
     noClasses: false
     style: monokai
+  goldmark:
+    renderer:
+      unsafe: true

@@ -1,7 +1,7 @@
 ---
 title: "Deploying the Claude Apps Gateway on Bedrock: A Scar Map"
 date: 2026-07-11
-draft: true
+draft: false
 slug: "llm-gateway-part-2"
 tags: ["ai", "agents", "bedrock", "llm", "cdk", "aws"]
 series: ["The LLM Gateway"]

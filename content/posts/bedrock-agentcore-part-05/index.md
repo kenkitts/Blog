@@ -78,6 +78,8 @@ flowchart LR
 
 The JWT is validated at two independent boundaries. The model sits in the middle, blissfully unaware.
 
+![Architecture diagram: alice's Cognito token validated at the Runtime and Gateway, an interceptor Lambda injecting the sub claim, and the notes Lambda querying a per-user DynamoDB partition — all while the agent calls the same tools with no user_id in scope](agentcore_identity_architecture.webp)
+
 ## How AgentCore Does It
 
 Two mechanisms:

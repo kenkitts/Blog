@@ -60,6 +60,12 @@ cdk deploy ClaudeGatewayDashboardStack   # any time
 
 Or `cdk deploy --all` once you've filled in the `YOUR_*` placeholders in `app.py` and `gateway_image/gateway.yaml`. The placeholders are not decoration — `cdk synth` will technically pass with fake ARNs, but CloudFormation will fail later in ways that are annoying to trace.
 
+The mermaid above is the stack dependency chain. Here's what those five stacks actually add up to at runtime — every box is something one of them stood up:
+
+![Runtime architecture of the Claude apps gateway on AWS: a developer laptop connects over mutual TLS through an AWS Client VPN endpoint to an internal ALB inside a VPC. The ALB fronts two ECS Fargate services — the Claude gateway (port 8080) and an ADOT collector (port 4318). The gateway calls Amazon Bedrock through a PrivateLink VPC endpoint, connects to RDS PostgreSQL 17.7 in private isolated subnets, and reaches Secrets Manager, ACM, and Okta OIDC through a NAT gateway. The ADOT collector ships metrics to CloudWatch via the awsemf exporter.](gateway_architecture.webp)
+
+If a few of the shapes look non-obvious — why the telemetry collector is its own Fargate service, why the ALB carries two listeners, why the PostgreSQL version is so specific — good. That's the rest of this post.
+
 Now for the parts that didn't go according to plan.
 
 ## Scar 1: The Gateway Refused to Talk to Its Own Telemetry Collector

@@ -200,9 +200,14 @@ agentcore add gateway-target --name NotesTarget --type lambda-function-arn \
 agentcore deploy -y
 ```
 
-Now the part the CLI can't do. The AgentCore CLI has no `add interceptor` command — interceptors are wired via the `UpdateGateway` API. The CLI covers 90% of the surface; for the last 10% you call the SDK:
+The gateway doesn't exist until that `deploy`, so it's the same two-phase dance as [Part 4](/posts/bedrock-agentcore-part-4/): deploy, fish the URL out of `agentcore status --json` (it hides under `deployedState → … → mcp.gateways.NotesGateway.gatewayUrl`), paste it into `GATEWAY_URL` in `notes_agent/config.py`, and `agentcore deploy -y` again so it ships with the bundle. Skip this and `GATEWAY_URL` stays empty, the agent shrugs and falls back to the in-process Post 1 tools, and everything *appears* to work — no gateway, no interceptor, no per-user partition, no point. The whole post, quietly bypassed.
+
+Now the part the CLI can't do. The AgentCore CLI has no `add interceptor` command — interceptors are wired via the `UpdateGateway` API. The CLI covers 90% of the surface; for the last 10% you call the SDK. First grab the gateway id — `list-gateways` filtered by name is the stable way. One gotcha: the AgentCore CLI prefixes your gateway with the project name, so the `NotesGateway` you asked for lands as `notesAgentRuntime-NotesGateway`. Match the suffix with `ends_with`, not an exact name, and it works no matter what you called the project:
 
 ```bash
+GATEWAY_ID=$(aws bedrock-agentcore-control list-gateways \
+    --query "items[?ends_with(name, 'NotesGateway')].gatewayId | [0]" --output text)
+
 python scripts/attach_interceptor.py "$GATEWAY_ID" "$NOTES_AGENT_INTERCEPTOR_LAMBDA_ARN"
 ```
 
@@ -224,7 +229,16 @@ aws iam put-role-policy --role-name <gateway-role> \
     }'
 ```
 
-Find the role name from `agentcore status --json` or from the 500 error you'll get without it. IAM propagates in seconds; retry after.
+The role name isn't in `agentcore status --json` — that lists the gateway but not its execution role, a fun fact to discover while a 500 stares back at you. Pull it from the control-plane API instead (the gateway *id* is in the status output, so you already have the one argument this needs):
+
+```bash
+aws bedrock-agentcore-control get-gateway \
+    --gateway-identifier "$GATEWAY_ID" \
+    --query roleArn --output text
+# arn:aws:iam::<ACCOUNT>:role/<gateway-role>  — the role name is the bit after role/
+```
+
+IAM propagates in seconds; retry the invoke after.
 
 ## Run / See It Work
 

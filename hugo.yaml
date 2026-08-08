@@ -53,11 +53,12 @@ params:
     Content: >
       ![](/wallpaper.webp)
 
-
-      I'm Ken. I keep payment systems operational in the cloud
-      so you can keep arguing with strangers on the internet. I write about
-      cloud architecture, operational nightmares, and the quiet dread of a
-      2 AM page. Everything here is my own opinion — my employer has better ones.
+      I'm Ken. I keep payment systems operational in the cloud, build AI
+      agents that occasionally go off the rails, and spend an unreasonable
+      amount of time thinking about how to keep systems secure. I write
+      about cloud architecture, agentic AI, authn/z, and the quiet dread of
+      getting paged at an hour with a single digit in it. Everything here
+      is my own opinion — my employer has better ones.
 
   socialIcons:
     - name: github

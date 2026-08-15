@@ -158,4 +158,4 @@ Every token this AS issues can carry a `may_act` claim, stamped on when the reso
 
 ---
 
-*This is Part 1 of a short series on the OAuth and the MCP auth changes around it. The [code](https://github.com/kenkitts/client-id-metadata-document) is Python end to end — CDK infrastructure, Lambda handlers, and a stdlib-only CLI — including both negative demos above.*
+*This is Part 1 of a short series on the OAuth Client ID Metadata Document draft and the MCP auth changes around it. The [code](https://github.com/kenkitts/client-id-metadata-document) is Python end to end — CDK infrastructure, Lambda handlers, and a stdlib-only CLI — including both negative demos above.*

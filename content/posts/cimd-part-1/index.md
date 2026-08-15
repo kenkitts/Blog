@@ -1,27 +1,33 @@
 ---
-title: "Your Auth Server Now Fetches URLs Strangers Pick"
+title: Your Auth Server Now Fetches URLs Strangers Pick
 date: 2026-08-17
-draft: true
-slug: "cimd-part-1"
-tags: ["oauth", "security", "mcp", "aws", "cdk"]
-series: ["The Client ID Is a URL"]
-description: "MCP deprecated Dynamic Client Registration in favor of a spec where the client_id is a URL the authorization server fetches at request time. Here's what that invites, and how to defend it."
+draft: false
+slug: cimd-part-1
+tags:
+  - oauth
+  - security
+  - mcp
+  - aws
+  - cdk
+series:
+  - The Client ID Is a URL
+description: MCP deprecated Dynamic Client Registration in favor of a spec where the client_id is a URL the authorization server fetches at request time. Here's what that invites, and how to defend it.
 cover:
-    image: "cimd.webp"
-    alt: "A traveler hands a worn document marked CIMD to an armored checkpoint officer while guards look on, in a neon-lit dystopian city"
-    relative: true
-    hidden: false
+  image: cimd.webp
+  alt: A traveler hands a worn document marked CIMD to an armored checkpoint officer while guards look on, in a neon-lit dystopian city
+  relative: true
+  hidden: false
 ---
 
 Every OAuth client you have ever built began with a small act of bureaucracy. A human opened a developer console, clicked "Register New Application," and received a `client_id`. That string is now a row in a database you don't own, on a server you'll never see, maintained by people you'll never meet. It is proof of identity for exactly one reason: somebody wrote your name down in advance. This act is known as client pre-registration.
 
-The naive answer to the pre-registration bottleneck: allow clients to register themselves with the AS in a process called Dynamic Client Registration (DCR). It was well intentioned and, as it turns out, utterly broken. That's changed.
+The naive answer to the pre-registration bottleneck: allow clients to register themselves with the Auth Server in a process called Dynamic Client Registration (DCR). It was well intentioned and, as it turns out, utterly broken. That's all changed.
 
 [MCP's authorization spec](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization/client-registration) has now demoted the client pre-registration ritual, killed DCR, and elevated Client ID Metadata Documents. As of the 2026-07-28 revision, in the section where registration mechanisms are ranked against each other:
 
 > "Dynamic Client Registration is deprecated. New implementations should use Client ID Metadata Documents instead."
 
-DCR is still there. It still works. It's just been demoted.
+DCR is still there. It still works. It's just been told it has no future here.
 
 ## Why DCR Walked the Plank
 

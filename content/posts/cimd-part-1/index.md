@@ -1,6 +1,6 @@
 ---
 title: Your Auth Server Now Fetches URLs Strangers Pick
-date: 2026-08-17
+date: 2026-08-15
 draft: false
 slug: cimd-part-1
 tags:
